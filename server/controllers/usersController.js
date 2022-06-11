@@ -24,6 +24,7 @@ export default class usersController {
    * @returns {Object} Class instance.
    */
   static createUser(req, res) {
+    console.log('Creating User...')
     const {
       username,
       email,
@@ -64,6 +65,7 @@ export default class usersController {
         });
       })
       .catch(Error => {
+        console.log(Error)
         res.status(500).json({
           errors: {
             status: '500',
